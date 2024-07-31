@@ -1,22 +1,26 @@
 #include <stdio.h>
-
-int main() {
-    int m[3][3],x,y,sol=-1000000;
-    for (x=0;x<3;x++){
-        for (y=0;y<3;y++){
-            scanf("%d",&m[x][y]);
-        }
+int main ()
+{
+    int n[10],i,j,count=0,c=0,a=0 ;
+    for (i=0 ; i<10 ; i++) 
+    {
+        scanf("%d",&n[i]) ;
     }
-    for (x=0;x<3;x++){
-        for (y=0;y<3;y++){
-            if (m[x][y]>sol){
-                sol=m[x][y];
-            }
-            else {
-
+    for (i=0 ; i<10 ; i++)
+    {
+        for (j=0 ; j<10 ; j++)
+        {
+            if (n[i] == n[j])
+            {
+                count++ ;
             }
         }
+        if (count > c)
+        {
+            c = count ;
+            a = i ;
+        }
+        count = 0;
     }
-    printf("The maximum value in the matrix is: %d",sol);
-    return 0;
+    printf("Mode = %d",n[a]) ;
 }
